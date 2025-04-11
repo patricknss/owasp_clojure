@@ -12,9 +12,9 @@ Then, require the library in your namespace:
 ```
 (ns your-namespace.core
   (:require [clojure-owasp.core :as owasp]))
-Use the available functions to scan or monitor your application for security concerns.
-(You can expand this section with specific code examples or API documentation.)
 ```
+Use the available functions to scan or monitor your application for security concerns.
+
 ## License
 
 Copyright © 2020 FIXME
