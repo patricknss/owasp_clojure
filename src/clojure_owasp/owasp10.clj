@@ -1,15 +1,15 @@
 (ns clojure-owasp.owasp10)
 
-(def db {:matheus.bernardes "banana", :guilherme.silveira "senha"})
+(def db {:patrick.noronha "banana", :marcelo.reis "senha"})
 
 (defn login [ip username password]
   (let [found-password (get db (keyword username))]
     (= found-password password)))
 
-(println (login "123.54.2.12" "matheus.bernardes" "banana"))
-(println (login "123.54.2.12" "matheus.bernardes" "senha"))
+(println (login "123.54.2.12" "patrick.noronha" "banana"))
+(println (login "123.54.2.12" "patrick.noronha" "senha"))
 
-(println (dotimes [_ 1000] (login "123.54.2.12" "matheus.bernardes" "89jr43")))
+(println (dotimes [_ 1000] (login "123.54.2.12" "patrick.noronha" "89jr43")))
 
 (def username-attempts (atom {}))
 (def ip-attempts (atom {}))
@@ -26,10 +26,10 @@
   (and (<= (get @ip-attempts ip) login-limit)
        (<= (get @username-attempts username) login-limit)))
 
-;(println (attempt-login? "matheus.bernardes" ))
-;(println (attempt-login? "matheus.bernardes" ))
+;(println (attempt-login? "patrick.noronha" ))
+;(println (attempt-login? "patrick.noronha" ))
 
-;(println (dotimes [_ 50] (println (login "matheus.bernardes" "89jr43"))))
+;(println (dotimes [_ 50] (println (login "patrick.noronha" "89jr43"))))
 
 
 (defn login [ip username password]
@@ -44,14 +44,14 @@
       (throw (Exception. "Ha! Too many attempts!")))))
 
 
-(println (dotimes [_ 29] (login "123.54.2.12" "matheus.bernardes" "89jr43")))
+(println (dotimes [_ 29] (login "123.54.2.12" "patrick.noronha" "89jr43")))
 (println @username-attempts)
-(println (login "123.54.2.12" "matheus.bernardes" "banana"))
+(println (login "123.54.2.12" "patrick.noronha" "banana"))
 (println @username-attempts)
 
 
-(println (dotimes [_ 29] (login "123.54.2.12" "matheus.bernardes" "89jr43")))
-(println (dotimes [_ 1] (login "123.54.2.12" "guilherme.silveira" "89jr43")))
+(println (dotimes [_ 29] (login "123.54.2.12" "patrick.noronha" "89jr43")))
+(println (dotimes [_ 1] (login "123.54.2.12" "marcelo.reis" "89jr43")))
 (println @username-attempts)
 (println @ip-attempts)
-(println (dotimes [_ 1] (login "123.54.2.12" "guilherme.silveira" "senha")))
+(println (dotimes [_ 1] (login "123.54.2.12" "marcelo.reis" "senha")))
