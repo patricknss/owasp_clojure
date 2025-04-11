@@ -1,6 +1,6 @@
 # clojure-owasp
 
-A Clojure library designed to ... well, that part is up to you.
+A Clojure library designed to ... well, that part is up to you :)
 
 ## Usage
 
