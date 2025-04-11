@@ -1,11 +1,20 @@
 # clojure-owasp
 
-A Clojure library designed to ... well, that part is up to you :)
+A Clojure library designed to help identify and mitigate common OWASP vulnerabilities in Clojure applications.
 
 ## Usage
 
-FIXME
-
+Add the dependency to your project.clj:
+```
+[clojure-owasp "0.1.0"]
+```
+Then, require the library in your namespace:
+```
+(ns your-namespace.core
+  (:require [clojure-owasp.core :as owasp]))
+Use the available functions to scan or monitor your application for security concerns.
+(You can expand this section with specific code examples or API documentation.)
+```
 ## License
 
 Copyright © 2020 FIXME
